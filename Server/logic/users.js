@@ -1,4 +1,4 @@
-import {v4 as uuid } from "uuid";
+
 let users=[];
 
 export const getUsers=(req,res)=>{
@@ -8,7 +8,7 @@ export const getUsers=(req,res)=>{
 
 export const createUser=(req,res)=>{
     const user=req.body;
-    users.push({id:uuid(),...user});
+    users.push({id:(users.length+1),...user});
     res.send("User Added");
 
 };
