@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  background-color: aliceblue;
+  padding: 16px 31px;
+}
+nav a {
+  margin-right: 16px;
+}
+
+.styled-table thead tr{
+  background-color: aliceblue;
+  text-align:left
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1 px solid #dddddd;
+
+}
