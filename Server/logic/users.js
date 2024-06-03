@@ -8,7 +8,7 @@ export const getUsers=(req,res)=>{
 
 export const createUser=(req,res)=>{
     const user=req.body;
-    users.push({id:(users.length+1),...user});
+    users.push({id:uuid(),...user});
     res.send("User Added");
 
 };
