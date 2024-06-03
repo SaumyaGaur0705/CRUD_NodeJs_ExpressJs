@@ -34,3 +34,26 @@ nav a {
   border-bottom: 1 px solid #dddddd;
 
 }
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin:8px 0;
+  display: intial-block;
+  border-radius: 4 px;
+  box-sizing: border-box;
+}
+
+input[type="submit"]{
+  width:100%;
+  background-color:aliceblue;
+  color: rgb(0, 0, 0);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid black;
+  border-radius:4px;
+  cursor:pointer;
+}
