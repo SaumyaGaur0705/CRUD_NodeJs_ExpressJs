@@ -14,23 +14,23 @@ export const createUser=(req,res)=>{
 };
 
 export const getUser=(req,res)=>{
-    const parsedId=parseInt(req.params.id);
-    const singleUser=users.filter((user)=>user.id===parsedId);
+    
+    const singleUser=users.filter((user)=>user.id===req.params.id);
     res.send(singleUser);
 
 };
 export const deleteUser=(req,res)=>{
-    const parsedId=parseInt(req.params.id);
-    const userIndex=users.findIndex((user)=>user.id===parsedId);
+    
+    const userIndex=users.findIndex((user)=>user.id===req.params.id);
     users.splice(userIndex,1);
     res.send("Delete Success");
 
 };
 
 export const updateUser=(req,res)=>{
-    const parsedId=parseInt(req.params.id);
-    const userIndex=users.findIndex((user)=>user.id===parsedId);
-    users[userIndex]={id:parsedId,...req.body}; //Don't use just body!!
+    
+    const userIndex=users.findIndex((user)=>user.id===req.params.id);
+    users[userIndex]={id:req.params.id,...req.body}; //Don't use just body!!
 
     //Seperate logic for same thing 
 
@@ -44,8 +44,8 @@ export const updateUser=(req,res)=>{
 };
 
 export const patchUser=(req,res)=>{
-    const parsedId=parseInt(req.params.id);
-    const userIndex=users.findIndex((user)=>user.id===parsedId);
+    
+    const userIndex=users.findIndex((user)=>user.id===req.params.id);
     users[userIndex]={...users[userIndex],...req.body};
     res.send("Details Patched Up");
 };

@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 const intialState={
-    name:" ",
-    email:" ",
-    contact:" ",
+    name:"",
+    email:"",
+    contact:"",
 };
 
 const AddEdit = () => {
@@ -12,20 +12,54 @@ const AddEdit = () => {
     const{name,email,contact}=state;
 
     const history=useNavigate();
+    
+    const {id}=useParams();
 
-    const addContact = async (data) => {
+    useEffect(()=>{
+        if(id){
+            getSingleUser(id);
+        }
+    },[id]);
+
+    const getSingleUser=async (id)=>{
+    const res=await axios.get(`http://localhost:5000/user/${id}`);
+    if(res.status===200 && res.data.length > 0){
+        const userData = res.data[0];
+        console.log(userData);
+        setState({
+            name: userData.name || "",  
+            email: userData.email || "",
+            contact: userData.contact || "",
+        });
+    }
+    };
+
+    const addUser = async (data) => {
         const res=await axios.post("http://localhost:5000/user",data);
         if(res.status===200){
             alert(res.data);
         }
-    }
+    };
+
+    const updateUser = async (data,id) => {
+        const res=await axios.put(`http://localhost:5000/user/${id}`,data);
+        if(res.status===200){
+            alert(res.data);
+        }
+    };
+
     const handleSubmit= async (e)=>{
         e.preventDefault();
         if (!name.trim() || !email.trim() || !contact.trim()) {
             alert('Fill all fields');
         }
         else{
-        await addContact(state);
+          if(!id){  
+        await addUser(state);
+          }
+          else{
+              updateUser(state,id);
+          }
         history('/');
         }
     }
@@ -66,7 +100,7 @@ const AddEdit = () => {
             onChange={handleInputChnage}
             value={contact}
             />
-            <input type="submit" value="Add"/>
+            <input type="submit" value={id?"Update":"Add"}/>
         </form>
         
     </div>
