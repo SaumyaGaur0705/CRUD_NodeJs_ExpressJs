@@ -14,6 +14,16 @@ const Home = () => {
         }
     };
     console.log("data " ,data);
+
+const onDelete= async(id)=>{
+    const res=await axios.delete(`http://localhost:5000/user/${id}`);
+    if(res.status===200){
+        alert(res.data);
+        getUsers();
+    }
+
+}
+
   return (
     <div style={{marginTop: "150px"}}>
         <table className="styled-table">
@@ -39,8 +49,8 @@ const Home = () => {
                             <Link to={`/update/${item.id}`}>
                                 <button>Edit</button>
                             </Link>
-                            <Link to={`/delete/${item.id}`}>
-                                <button>Delete</button>
+                            <Link >
+                                <button onClick={()=>onDelete(item.id)}>Delete</button>
                             </Link>
                             <Link to={`/view/${item.id}`}>
                                 <button>View</button>

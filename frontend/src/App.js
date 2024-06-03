@@ -15,7 +15,6 @@ function App() {
       <Route path='/' element={<Home/>}></Route>
       <Route path='/add' element={<AddEdit/>}></Route>
       <Route path='/update/:id' element={<AddEdit/>}></Route>
-      <Route path='/delete/:id' element={<AddEdit/>}></Route>
       <Route path='/view/:id' element={<View/>}></Route>
     </Routes>
     </>
