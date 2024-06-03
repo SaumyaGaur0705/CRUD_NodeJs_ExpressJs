@@ -1,4 +1,3 @@
-import React from 'react'
 import React, { useEffect, useState } from 'react'
 import { useParams,Link } from 'react-router-dom';
 import axios from "axios";
@@ -19,7 +18,6 @@ const getSingleUser=async (id)=> {
         setUser({...res.data[0]});
     }
 };
-
   return (
     <div>
         <h1>View</h1>
@@ -46,6 +44,8 @@ const getSingleUser=async (id)=> {
             <Link to="/"><button>Go back</button></Link>
         </div>
     </div>
-
+    </div>
   )
 }
+
+export default View
