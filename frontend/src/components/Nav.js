@@ -5,23 +5,24 @@ const Nav = () => {
   const [activeTab, setActiveTab] = useState("Home");
 
   return (
-    <nav>
-      <p>CRUD APPLICATION</p>
+    <div className="header">
+      <p className="logo">CRUD APPLICATION</p>
+      <div className="header-right">
       <Link 
         to='/' 
-        className={`${activeTab === "Home" ? "active" : ""}`} 
-        onClick={() => setActiveTab("Home")}
       >
-        Home
+        <p className={`${activeTab === "Home" ? "active" : ""}`} 
+        onClick={() => setActiveTab("Home")}> Home</p>
+       
       </Link>
       <Link 
-        to='/add' 
-        className={`${activeTab === "Add User" ? "active" : ""}`} 
-        onClick={() => setActiveTab("Add User")}
-      >
-        Add User
+        to='/add' >
+        <p className={`${activeTab === "Add User" ? "active" : ""}`} 
+        onClick={() => setActiveTab("Add User")}>  Add User </p>
+       
       </Link>
-    </nav>
+      </div>
+    </div>
   );
 };
 

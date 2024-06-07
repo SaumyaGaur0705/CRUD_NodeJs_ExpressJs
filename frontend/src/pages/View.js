@@ -20,7 +20,7 @@ const getSingleUser=async (id)=> {
 };
   return (
     <div>
-        <h1>View</h1>
+
     <div style={{marginTop: "150px", padding:"20px"}}>
 
         <p>User Details</p>

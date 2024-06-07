@@ -50,7 +50,7 @@ const AddEdit = () => {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        if (!name.trim() || !email.trim() || !contact.trim()) {
+        if (!name || !email || !contact) {
             alert('Fill all fields');
         }
         else{
