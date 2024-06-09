@@ -57,3 +57,37 @@ input[type="submit"]{
   border-radius:4px;
   cursor:pointer;
 }
+
+.header{
+  overflow: hidden;
+  background-color: aliceblue;
+  padding-bottom: 0%;
+
+}
+
+.header p{
+  float:left;
+  color:rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  margin:0%;
+  border-radius:4px;
+}
+
+.header p.logo {
+  font-size: 25px;
+
+  color:rgb(0, 0, 0);
+}
+
+.header p.active{
+  background-color: rgb(112, 170, 221);
+
+  color: rgb(0, 0, 0);
+}
+
+.header-right{
+  padding: 10px;
+  float:right;
+}

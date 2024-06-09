@@ -8,6 +8,14 @@ const port=5000;
 app.use(express.json());
 app.use(cors());
 app.use(usersRouter);
+
+const logRequest = (req,res,next)=>{
+    console.log(`[${new Date().toLocaleString()}] Request made to: ${req.originalUrl}`);
+    next();
+}
+
+app.use(logRequest);
+
 // app.post("/user",(req,res)=>{
 //     const user=req.body;
 //     users.push({id:(users.length+1),...user});
