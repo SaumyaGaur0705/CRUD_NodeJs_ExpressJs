@@ -1,4 +1,5 @@
 import  express from "express";
+import bodyParser from "body-parser";
 import cors from "cors";
 import usersRouter from "./routes/users.js";
 const app=express();
