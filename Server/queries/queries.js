@@ -9,3 +9,7 @@ export const adduser="Insert into crudusers (id,name,email,contact) values ($1,$
 export const deleteuser="DELETE from crudusers where id=$1;";
 
 export const updateuser="UPDATE crudusers SET name = $2,email=$3,contact=$4 WHERE id =$1;";
+
+export const userfindid="Select id,firstname,lastname,email,followers,following,bio from auth where id=$1;";
+
+export const addfollowing=""

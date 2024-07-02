@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.heart-icon{
+    height:100px;
+    width:100px;
+    background: url("assests/heart.png");
+    background-position: left;
+    cursor: pointer;
+    position: absolute;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heart-bg{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* .likes-amount{
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+    font-weight: 400;
+    
+    margin-top: 20px;
+    margin-left:0px;
+} */
+
+.likecss{
+    height: 8vh;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.heart-bg:hover{
+    background: rgba(255, 192, 200, 0.7);
+}
+
+.heart-icon.liked {
+    animation: like-anim 0.7s steps(28) forwards;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  @keyframes like-anim {
+    to {
+      background-position: right;
+    }
   }
-  to {
-    transform: rotate(360deg);
+  
+  .likes-amount.liked {
+    color: red;
   }
-}
